@@ -1,0 +1,56 @@
+/**
+ * Theme color definitions for light and dark modes
+ */
+
+import type { ThemeColors } from './types';
+
+export const THEMES: Record<'light' | 'dark', ThemeColors> = {
+  light: {
+    bg: '#f8f8f6',
+    surface: '#ffffff',
+    surfaceAlt: '#f2f2f0',
+    border: '#e2e2e2',
+    text: '#0f0f0f',
+    textMuted: '#888888',
+    textSubtle: '#aaaaaa',
+    textBody: '#444444',
+    textSecondary: '#555555',
+    headerBg: 'rgba(248,248,246,0.94)',
+    tagBg: '#efefed',
+    tagColor: '#444444',
+    cardHoverBg: '#0f0f0f',
+    cardHoverText: '#ffffff',
+    cardHoverMuted: '#aaaaaa',
+    cardHoverTag: '#1a1a1a',
+    cardHoverTagText: '#777777',
+    footerBg: '#ffffff',
+    dashed: '#dddddd',
+    expHover: '#fafafa',
+    toggleBg: '#0f0f0f',
+    toggleColor: '#f8f8f6',
+  },
+  dark: {
+    bg: '#0a0a0a',
+    surface: '#111111',
+    surfaceAlt: '#161616',
+    border: '#222222',
+    text: '#f0f0ee',
+    textMuted: '#666666',
+    textSubtle: '#444444',
+    textBody: '#b0b0ae',
+    textSecondary: '#888888',
+    headerBg: 'rgba(10,10,10,0.94)',
+    tagBg: '#202020',
+    tagColor: '#aaaaaa',
+    cardHoverBg: '#f0f0ee',
+    cardHoverText: '#0a0a0a',
+    cardHoverMuted: '#555555',
+    cardHoverTag: '#2a2a2a',
+    cardHoverTagText: '#aaaaaa',
+    footerBg: '#111111',
+    dashed: '#222222',
+    expHover: '#161616',
+    toggleBg: '#f0f0ee',
+    toggleColor: '#0a0a0a',
+  },
+};

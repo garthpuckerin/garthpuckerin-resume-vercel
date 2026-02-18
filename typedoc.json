@@ -1,0 +1,18 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["./lib", "./components"],
+  "entryPointStrategy": "expand",
+  "out": "docs",
+  "exclude": ["**/node_modules/**", "**/*.test.*", "**/*.spec.*"],
+  "excludeExternals": true,
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "readme": "none",
+  "plugin": [],
+  "theme": "default",
+  "name": "Garth Puckerin Resume",
+  "includeVersion": true,
+  "categorizeByGroup": true,
+  "categoryOrder": ["Data", "Components", "API", "*"],
+  "sort": ["source-order"]
+}
