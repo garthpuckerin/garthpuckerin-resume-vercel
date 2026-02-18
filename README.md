@@ -1,6 +1,6 @@
 # Garth Puckerin — Resume & Portfolio
 
-Professional resume and portfolio site built with Next.js 14, TypeScript, and modern development tooling.
+Professional resume and portfolio site built with Next.js 15, TypeScript, and modern development tooling.
 
 ## Quick Start
 
@@ -13,17 +13,18 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Scripts
 
-| Command             | Description                        |
-| ------------------- | ---------------------------------- |
-| `npm run dev`       | Start development server           |
-| `npm run build`     | Production build                   |
-| `npm run start`     | Start production server            |
-| `npm run lint`      | Run ESLint                         |
-| `npm run format`    | Format code with Prettier          |
-| `npm run test`      | Run Vitest tests                   |
-| `npm run typecheck` | TypeScript check                   |
-| `npm run docs`      | Generate TypeDoc documentation     |
-| `npm run commit`    | Interactive commit with Commitizen |
+| Command                 | Description                        |
+| ----------------------- | ---------------------------------- |
+| `npm run dev`           | Start development server           |
+| `npm run build`         | Production build                   |
+| `npm run start`         | Start production server            |
+| `npm run lint`          | Run ESLint                         |
+| `npm run format`        | Format code with Prettier          |
+| `npm run test`          | Run Vitest tests                   |
+| `npm run test:coverage` | Run tests with coverage report     |
+| `npm run typecheck`     | TypeScript check                   |
+| `npm run docs`          | Generate TypeDoc documentation     |
+| `npm run commit`        | Interactive commit with Commitizen |
 
 ## Development Standards
 
@@ -64,9 +65,15 @@ npm run security:audit   # npm audit
 
 ### Documentation
 
-- **[Project docs](./docs/)** — Architecture, contributing
+- **[Project docs](./docs/)** — Architecture, contributing, workflows
 - **[Changelog](./CHANGELOG.md)** — Version history
 - **TypeDoc** — `npm run docs` → `api-docs/`, `npm run docs:serve` to preview
+
+### CI / Workflows
+
+- **CI** — Runs on push/PR to main (typecheck, lint, format, test, coverage, build)
+- **Release** — Runs on tag `v*`, creates GitHub Release
+- **Dependabot** — Weekly dependency updates
 
 ## Project Structure
 
@@ -78,7 +85,7 @@ npm run security:audit   # npm audit
 ├── components/       # React components
 ├── lib/              # Data, types, themes
 ├── docs/             # Project documentation
-├── .github/workflows/ # CI pipeline
+├── .github/          # Workflows, Dependabot, PR template
 └── .husky/           # Git hooks
 ```
 

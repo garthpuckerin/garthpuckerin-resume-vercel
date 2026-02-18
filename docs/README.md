@@ -6,6 +6,7 @@ Documentation for the Garth Puckerin resume and portfolio site.
 
 - [Architecture](./ARCHITECTURE.md) — Technical architecture and design decisions
 - [Contributing](./CONTRIBUTING.md) — How to contribute and development workflow
+- [Workflows](./WORKFLOWS.md) — Git branching, PRs, releases, CI
 
 ## Quick Links
 
