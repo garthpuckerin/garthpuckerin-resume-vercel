@@ -62,12 +62,11 @@ Examples: `feat: add project filter`, `fix: correct theme persistence`, `docs: u
 npm run security:audit   # npm audit
 ```
 
-### Generated Docs
+### Documentation
 
-```bash
-npm run docs         # Generate TypeDoc → ./docs
-npm run docs:serve   # Serve docs locally
-```
+- **[Project docs](./docs/)** — Architecture, contributing
+- **[Changelog](./CHANGELOG.md)** — Version history
+- **TypeDoc** — `npm run docs` → `api-docs/`, `npm run docs:serve` to preview
 
 ## Project Structure
 
@@ -78,6 +77,7 @@ npm run docs:serve   # Serve docs locally
 │   └── page.tsx      # Homepage
 ├── components/       # React components
 ├── lib/              # Data, types, themes
+├── docs/             # Project documentation
 ├── .github/workflows/ # CI pipeline
 └── .husky/           # Git hooks
 ```
