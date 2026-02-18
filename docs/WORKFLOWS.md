@@ -1,5 +1,12 @@
 # Git Workflows
 
+## Setup (first time)
+
+```bash
+git remote add origin https://github.com/<org>/<repo>.git
+git push -u origin main
+```
+
 ## Branching
 
 - **main** — Production-ready. Protected. All merges via PR.
