@@ -33,13 +33,22 @@ export interface ThemeColors {
   toggleColor: string;
 }
 
+export interface ProjectModal {
+  overview: string;
+  capabilities: string[];
+  enterpriseValue: string;
+  useCases: string[];
+}
+
 export interface Project {
   id: string;
   label: string;
   title: string;
+  type: string;
   description: string;
   tech: string[];
   href: string;
+  modal: ProjectModal;
 }
 
 export interface Experience {

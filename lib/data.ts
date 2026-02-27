@@ -15,40 +15,116 @@ export const ACCENTS: Accent[] = [
 
 export const PROJECTS: Project[] = [
   {
-    id: 'prompt-observatory',
-    label: 'Developer Tool',
-    title: 'Prompt Observatory',
+    id: 'curriculum-builder',
+    label: 'L&D Tool · AI-First',
+    title: 'Curriculum Builder',
+    type: 'AI-Assisted Instructional Design',
     description:
-      'Test, compare, and version AI prompts with real-time latency metrics, token counting, and side-by-side run comparison. Built for teams iterating on LLM-powered workflows.',
-    tech: ['Claude API', 'Next.js', 'TypeScript'],
-    href: 'https://prompt-observatory.vercel.app',
+      'Enter a topic, audience, and duration — AI generates a structured curriculum with learning objectives, activities, and assessments, ready for any LMS including Intellum.',
+    tech: ['Claude API', 'Next.js', 'SCORM-aware'],
+    href: 'https://curriculum-builder.vercel.app',
+    modal: {
+      overview:
+        'Applied implementation of the Janus content engine with MIMIR²-style content structuring. Enter a topic, audience, and duration — AI generates a structured curriculum with learning objectives, activities, and assessments, ready for any LMS including Intellum.',
+      capabilities: [
+        'Structured curriculum from a single brief — topic, audience, duration',
+        'Audience-aware content generation (different outputs for learners vs. facilitators)',
+        'Learning objectives, activities, and assessments in one pass',
+        'SCORM-compatible output schema for direct LMS import',
+        'Deployable to Intellum, Docebo, Workday Learning, and other platforms',
+      ],
+      enterpriseValue:
+        'Reduces curriculum design time from days to hours. One L&D professional produces what previously required a full instructional design team. Directly addresses the AI-first content creation requirement.',
+      useCases: [
+        'New product feature → complete training kit within a business day',
+        'Compliance course refresh triggered by policy changes',
+        'Onboarding curriculum generation for new hire cohorts at scale',
+      ],
+    },
   },
   {
     id: 'connex',
     label: 'Enterprise Integration',
     title: 'Connex',
+    type: 'Integration Control Plane',
     description:
       'Integration control plane for enterprise HR and learning systems. Semantic field matching, human-in-the-loop approval queues, and live sync logs across UKG, Docebo, LinkedIn Learning, and Axonify.',
     tech: ['React', 'Next.js', 'AI Matching'],
     href: 'https://connex-dashboard.vercel.app',
+    modal: {
+      overview:
+        'Production implementation of the Aether SDK integration architecture. Integration control plane for enterprise HR and learning systems — semantic field matching, human-in-the-loop approval queues, and live sync logs across UKG, Docebo, LinkedIn Learning, and Axonify.',
+      capabilities: [
+        'Semantic field matching across mismatched system schemas',
+        'Human-in-the-loop approval queues for high-stakes data changes',
+        'Live sync status logs and error surfaces',
+        'Support for UKG + Docebo + LinkedIn Learning + Axonify',
+        'Drift detection with configurable alerting thresholds',
+      ],
+      enterpriseValue:
+        'Eliminates manual data reconciliation between HR and learning systems. The same architecture is directly applicable to Intellum + HRIS/CRM integration at Walmart Connect.',
+      useCases: [
+        'Employee role change triggers automated learning path update',
+        'Training completions sync automatically to HRIS compliance records',
+        'New hire auto-enrolled in Intellum onboarding path on day one',
+      ],
+    },
   },
   {
-    id: 'curriculum-builder',
-    label: 'L&D Tool',
-    title: 'Curriculum Builder',
+    id: 'prompt-observatory',
+    label: 'Developer Tool',
+    title: 'Prompt Observatory',
+    type: 'AI Workflow Testing & Governance',
     description:
-      'AI-assisted instructional design. Enter a topic, audience, and duration — get a structured curriculum with learning objectives, activities, and assessments ready for Docebo or Workday Learning.',
-    tech: ['Claude API', 'Next.js', 'SCORM-aware'],
-    href: 'https://curriculum-builder.vercel.app',
+      'Test, compare, and version AI prompts with real-time latency metrics, token counting, and side-by-side run comparison. Built for teams iterating on LLM-powered L&D workflows.',
+    tech: ['Claude API', 'Next.js', 'TypeScript'],
+    href: 'https://prompt-observatory.vercel.app',
+    modal: {
+      overview:
+        'Experimentation and iteration environment for the AI workflows that power Janus. Test, compare, and version AI prompts with real-time latency metrics, token counting, and side-by-side run comparison — built for teams iterating on LLM-powered L&D workflows.',
+      capabilities: [
+        'Side-by-side prompt comparison with performance metrics',
+        'Latency and token cost tracking per run',
+        'Version history for prompt iterations with rollback',
+        'Reproducible test runs with documented results',
+        'Shareable run records for team review and approval workflows',
+      ],
+      enterpriseValue:
+        'Enables responsible AI deployment: prompt behavior is testable, comparable, and auditable before it reaches learners. Supports enterprise AI governance — humans validate before production use.',
+      useCases: [
+        'Evaluating content generation prompts before LMS deployment',
+        'A/B testing learner communication variants for completion rate impact',
+        'Documenting AI-assisted design decisions for audit trail',
+      ],
+    },
   },
   {
     id: 'self-healing-docs',
     label: 'Documentation System',
     title: 'Self-Healing Docs',
+    type: 'AI-Assisted Documentation Governance',
     description:
-      'AI-assisted drift detection for technical documentation. Paste two API specs — the agent surfaces breaking changes, behavioral shifts, and doc update recommendations with confidence scoring.',
+      'AI-assisted drift detection for technical documentation. Surfaces breaking changes, behavioral shifts, and doc update recommendations with confidence scoring.',
     tech: ['Claude API', 'Next.js', 'MDX'],
     href: 'https://garthpuckerin-vercel.vercel.app',
+    modal: {
+      overview:
+        "Applied prototype of MIMIR²'s drift detection and propagation logic. Paste two API specs — the agent surfaces breaking changes, behavioral shifts, and doc update recommendations with confidence scoring. Proof-of-concept for AI-assisted training content governance.",
+      capabilities: [
+        'API spec comparison and drift analysis with confidence scoring',
+        'Breaking change detection vs. behavioral shift classification',
+        'Actionable update suggestions for doc maintainers',
+        'Structured output suitable for downstream content generation triggers',
+        'Human-review gate — no recommendations surface without approval',
+      ],
+      enterpriseValue:
+        'Demonstrates the documentation governance principle this role requires: keeping training content accurate when the product changes. Directly applicable to Intellum content maintenance workflows.',
+      useCases: [
+        'Flagging outdated training materials after product release cycles',
+        'Tracking documentation drift across quarterly platform updates',
+        'Informing Intellum content refresh priorities with confidence scores',
+      ],
+    },
   },
 ];
 

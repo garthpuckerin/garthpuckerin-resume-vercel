@@ -2,7 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import { ProjectCard } from '@/components/ProjectCard';
+import { ProjectModal } from '@/components/ProjectModal';
 import { ACCENTS, PROJECTS, EXPERIENCE, SKILLS } from '@/lib/data';
+import type { Project } from '@/lib/types';
 import { THEMES } from '@/lib/themes';
 
 const CONTACT_LINKS = [
@@ -21,6 +23,7 @@ export default function Homepage() {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
   const [accentId, setAccentId] = useState('blue');
   const [activeSection, setActiveSection] = useState('overview');
+  const [activeModal, setActiveModal] = useState<Project | null>(null);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -349,6 +352,7 @@ export default function Homepage() {
                 index={i}
                 theme={theme}
                 accent={accent}
+                onOpen={setActiveModal}
               />
             ))}
           </div>
@@ -625,6 +629,15 @@ export default function Homepage() {
           ))}
         </div>
       </footer>
+
+      {activeModal && (
+        <ProjectModal
+          project={activeModal}
+          onClose={() => setActiveModal(null)}
+          theme={theme}
+          accent={accent}
+        />
+      )}
     </div>
   );
 }

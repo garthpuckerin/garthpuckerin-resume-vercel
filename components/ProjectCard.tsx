@@ -9,25 +9,34 @@ interface ProjectCardProps {
   index: number;
   theme: 'light' | 'dark';
   accent: string;
+  onOpen: (project: Project) => void;
 }
 
 /**
- * Project card component with hover effects and live badge
+ * Project card component with hover effects and modal trigger
  */
-export function ProjectCard({ project, index, theme, accent }: ProjectCardProps) {
+export function ProjectCard({ project, index, theme, accent, onOpen }: ProjectCardProps) {
   const [hovered, setHovered] = useState(false);
   const t = THEMES[theme];
 
+  const handleActivate = () => onOpen(project);
+
   return (
-    <a
-      href={project.href}
-      target="_blank"
-      rel="noopener noreferrer"
+    <div
+      onClick={handleActivate}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleActivate();
+        }
+      }}
+      tabIndex={0}
+      role="button"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
         display: 'block',
-        textDecoration: 'none',
+        cursor: 'pointer',
         border: `1.5px solid ${hovered ? accent : t.border}`,
         padding: '28px 28px 24px',
         background: hovered ? t.cardHoverBg : t.surface,
@@ -37,6 +46,7 @@ export function ProjectCard({ project, index, theme, accent }: ProjectCardProps)
         animation: 'fadeUp 0.4s ease forwards',
         animationDelay: `${index * 0.07}s`,
         opacity: 0,
+        outline: 'none',
       }}
     >
       <div
@@ -135,9 +145,9 @@ export function ProjectCard({ project, index, theme, accent }: ProjectCardProps)
             transition: 'color 0.2s ease',
           }}
         >
-          View →
+          Learn more →
         </span>
       </div>
-    </a>
+    </div>
   );
 }

@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-02-27
+
+### Added
+
+- Interactive Project Modals: Detailed project views with overview, capabilities, and enterprise value.
+- Project details for Prompt Observatory, Connex, Curriculum Builder, and Self-Healing Docs.
+- `ProjectModal` component with interactive triggers and keyboard accessibility.
+
+### Changed
+
+- Ported modal aesthetic and functionality from Walmart project.
+- Updated `Project` interface and data schema to support detailed modal content.
+- Refactored `ProjectCard` from direct links to modal triggers.
+
 ## [1.0.2] - 2025-02-18
 
 ### Added
