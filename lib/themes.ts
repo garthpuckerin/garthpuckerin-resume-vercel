@@ -4,7 +4,7 @@
 
 import type { ThemeColors } from './types';
 
-export const THEMES: Record<'light' | 'dark', ThemeColors> = {
+export const THEMES: Record<'light' | 'dark' | 'corporate', ThemeColors> = {
   light: {
     bg: '#f8f8f6',
     surface: '#ffffff',
@@ -52,5 +52,29 @@ export const THEMES: Record<'light' | 'dark', ThemeColors> = {
     expHover: '#161616',
     toggleBg: '#f0f0ee',
     toggleColor: '#0a0a0a',
+  },
+  corporate: {
+    bg: '#f4f7fb',
+    surface: '#ffffff',
+    surfaceAlt: '#eaf2fc',
+    border: '#dce5f0',
+    text: '#071628',
+    textMuted: '#5a6e84',
+    textSubtle: '#96aabf',
+    textBody: '#2c3e52',
+    textSecondary: '#4a5f75',
+    headerBg: 'rgba(244, 247, 251, 0.96)',
+    tagBg: '#e4f0fb',
+    tagColor: '#005eb8',
+    cardHoverBg: '#0071ce',
+    cardHoverText: '#ffffff',
+    cardHoverMuted: '#ffffffbb',
+    cardHoverTag: '#005eb822',
+    cardHoverTagText: '#ffffff',
+    footerBg: '#ffffff',
+    dashed: '#dce5f0',
+    expHover: '#eef4fb',
+    toggleBg: '#071628',
+    toggleColor: '#f4f7fb',
   },
 };

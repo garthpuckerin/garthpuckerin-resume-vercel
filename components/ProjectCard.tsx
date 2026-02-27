@@ -7,7 +7,7 @@ import { THEMES } from '@/lib/themes';
 interface ProjectCardProps {
   project: Project;
   index: number;
-  theme: 'light' | 'dark';
+  theme: 'light' | 'dark' | 'corporate';
   accent: string;
   onOpen: (project: Project) => void;
 }

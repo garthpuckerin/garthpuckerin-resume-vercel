@@ -3,6 +3,9 @@
 import { useState, useEffect } from 'react';
 import { ProjectCard } from '@/components/ProjectCard';
 import { ProjectModal } from '@/components/ProjectModal';
+import { GetInTouch } from '@/components/GetInTouch';
+import { Chatbot } from '@/components/Chatbot';
+import { ResumeGenerator } from '@/components/ResumeGenerator';
 import { ACCENTS, PROJECTS, EXPERIENCE, SKILLS } from '@/lib/data';
 import type { Project } from '@/lib/types';
 import { THEMES } from '@/lib/themes';
@@ -20,7 +23,7 @@ const FOOTER_LINKS = [
 ];
 
 export default function Homepage() {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [theme, setTheme] = useState<'light' | 'dark' | 'corporate'>('light');
   const [accentId, setAccentId] = useState('blue');
   const [activeSection, setActiveSection] = useState('overview');
   const [activeModal, setActiveModal] = useState<Project | null>(null);
@@ -35,7 +38,8 @@ export default function Homepage() {
   }, []);
 
   const toggleTheme = () => {
-    const next = theme === 'light' ? 'dark' : 'light';
+    const modes: ('light' | 'dark' | 'corporate')[] = ['light', 'dark', 'corporate'];
+    const next = modes[(modes.indexOf(theme) + 1) % modes.length];
     setTheme(next);
     localStorage.setItem('gp-theme', next);
   };
@@ -113,7 +117,7 @@ export default function Homepage() {
         </span>
 
         <nav style={{ display: 'flex', gap: 28 }}>
-          {['overview', 'projects', 'experience', 'skills'].map((s) => (
+          {['overview', 'projects', 'experience', 'skills', 'contact'].map((s) => (
             <a
               key={s}
               href={`#${s}`}
@@ -137,6 +141,25 @@ export default function Homepage() {
               {s.charAt(0).toUpperCase() + s.slice(1)}
             </a>
           ))}
+          <button
+            onClick={() => window.dispatchEvent(new CustomEvent('open-resume-gen'))}
+            className="nav-link"
+            style={{
+              fontFamily: "'Syne', sans-serif",
+              fontSize: 13,
+              fontWeight: 700,
+              color: accent,
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              letterSpacing: '0.02em',
+              paddingBottom: 2,
+              borderBottom: '1.5px solid transparent',
+              transition: 'all 0.15s ease',
+            }}
+          >
+            Resume
+          </button>
         </nav>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
@@ -168,17 +191,22 @@ export default function Homepage() {
             type="button"
             style={{
               fontFamily: "'Syne Mono', monospace",
-              fontSize: 11,
+              fontSize: 10,
               background: t.toggleBg,
               color: t.toggleColor,
               border: 'none',
-              padding: '6px 12px',
+              padding: '6px 14px',
+              borderRadius: '20px',
               cursor: 'pointer',
-              letterSpacing: '0.08em',
+              letterSpacing: '0.05em',
+              fontWeight: 700,
               transition: 'all 0.2s ease',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 6,
             }}
           >
-            {theme === 'light' ? '◐ Dark' : '◑ Light'}
+            {theme === 'light' ? '● LIGHT' : theme === 'dark' ? '○ DARK' : '■ CORPORATE'}
           </button>
           <a
             href="mailto:garth.puckerin@me.com"
@@ -583,6 +611,8 @@ export default function Homepage() {
             ))}
           </div>
         </section>
+
+        <GetInTouch theme={theme} accent={accent} />
       </main>
 
       <footer
@@ -638,6 +668,9 @@ export default function Homepage() {
           accent={accent}
         />
       )}
+
+      <Chatbot theme={theme} accent={accent} />
+      <ResumeGenerator theme={theme} accent={accent} />
     </div>
   );
 }

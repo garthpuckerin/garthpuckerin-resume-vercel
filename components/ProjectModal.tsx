@@ -7,7 +7,7 @@ import { THEMES } from '@/lib/themes';
 interface ProjectModalProps {
   project: Project;
   onClose: () => void;
-  theme: 'light' | 'dark';
+  theme: 'light' | 'dark' | 'corporate';
   accent: string;
 }
 
