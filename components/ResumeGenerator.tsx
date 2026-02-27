@@ -5,7 +5,7 @@ import { THEMES } from '@/lib/themes';
 import { PROJECTS, EXPERIENCE, SKILLS } from '@/lib/data';
 
 interface ResumeGeneratorProps {
-  theme: 'light' | 'dark' | 'corporate';
+  theme: 'light' | 'dark' | 'azure';
   accent: string;
 }
 
@@ -156,7 +156,7 @@ export function ResumeGenerator({ theme, accent }: ResumeGeneratorProps) {
                 <span>{exp.period}</span>
               </div>
               <p style={{ fontSize: '10pt', marginTop: '4pt', whiteSpace: 'pre-line' }}>
-                {exp.description}
+                {exp.bullets.join('\n')}
               </p>
             </div>
           ))}
