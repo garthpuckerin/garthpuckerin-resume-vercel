@@ -80,7 +80,7 @@ export function ProjectCard({ project, index, theme, accent, onOpen }: ProjectCa
             letterSpacing: '0.08em',
           }}
         >
-          ● LIVE
+          COMING SOON
         </span>
       </div>
       <div
