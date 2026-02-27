@@ -297,7 +297,7 @@ export function ProjectModal({ project, onClose, theme, accent }: ProjectModalPr
               onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.85')}
               onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
             >
-              Launch Live Site →
+              Live Demo coming soon
             </a>
           </div>
         </div>
