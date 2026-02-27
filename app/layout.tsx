@@ -18,6 +18,9 @@ export const metadata: Metadata = {
     title: 'Garth Puckerin | Business Systems Analyst · Learning Systems Architect',
     description: 'Enterprise systems integration, LMS architecture, and full-stack development.',
   },
+  icons: {
+    icon: '/favicon.png',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
