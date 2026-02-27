@@ -4,7 +4,7 @@ import { THEMES } from '@/lib/themes';
 import type { ThemeColors } from '@/lib/types';
 
 interface GetInTouchProps {
-  theme: 'light' | 'dark' | 'corporate';
+  theme: 'light' | 'dark' | 'azure';
   accent: string;
 }
 
@@ -117,7 +117,7 @@ export function GetInTouch({ theme, accent }: GetInTouchProps) {
         {/* Contact Info Card */}
         <div
           style={{
-            background: theme === 'corporate' ? t.surfaceAlt : t.surface,
+            background: theme === 'azure' ? t.surfaceAlt : t.surface,
             border: `1.5px solid ${t.border}`,
             padding: '32px',
             display: 'flex',

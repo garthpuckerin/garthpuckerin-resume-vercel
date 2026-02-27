@@ -2,6 +2,8 @@
  * Type definitions for resume/portfolio content
  */
 
+export type THEMES = 'light' | 'dark' | 'azure';
+
 export interface Accent {
   id: string;
   label: string;

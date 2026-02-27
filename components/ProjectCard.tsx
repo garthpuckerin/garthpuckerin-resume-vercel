@@ -7,7 +7,7 @@ import { THEMES } from '@/lib/themes';
 interface ProjectCardProps {
   project: Project;
   index: number;
-  theme: 'light' | 'dark' | 'corporate';
+  theme: 'light' | 'dark' | 'azure';
   accent: string;
   onOpen: (project: Project) => void;
   showInsights?: boolean;

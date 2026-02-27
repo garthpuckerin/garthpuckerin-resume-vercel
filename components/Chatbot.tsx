@@ -10,7 +10,7 @@ interface Message {
 }
 
 interface ChatbotProps {
-  theme: 'light' | 'dark' | 'corporate';
+  theme: 'light' | 'dark' | 'azure';
   accent: string;
 }
 
@@ -70,7 +70,7 @@ export function Chatbot({ theme, accent }: ChatbotProps) {
         query.includes('background')
       ) {
         const current = EXPERIENCE[0];
-        response = `Garth is currently a ${current.role} at ${current.company}, where he works on ${current.description.slice(0, 50)}...`;
+        response = `Garth is currently a ${current.role} at ${current.company}, where he works on ${current.bullets[0].slice(0, 50)}...`;
       } else if (query.includes('hi') || query.includes('hello')) {
         response =
           "Hello! Looking for a summary of Garth's background or specific project details?";

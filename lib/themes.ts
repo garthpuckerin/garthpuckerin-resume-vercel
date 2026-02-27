@@ -4,7 +4,7 @@
 
 import type { ThemeColors } from './types';
 
-export const THEMES: Record<'light' | 'dark' | 'corporate', ThemeColors> = {
+export const THEMES: Record<'light' | 'dark' | 'azure', ThemeColors> = {
   light: {
     bg: '#f8f8f6',
     surface: '#ffffff',
@@ -53,28 +53,28 @@ export const THEMES: Record<'light' | 'dark' | 'corporate', ThemeColors> = {
     toggleBg: '#f0f0ee',
     toggleColor: '#0a0a0a',
   },
-  corporate: {
-    bg: '#f4f7fb',
-    surface: '#ffffff',
-    surfaceAlt: '#eaf2fc',
-    border: '#dce5f0',
-    text: '#071628',
-    textMuted: '#5a6e84',
-    textSubtle: '#96aabf',
-    textBody: '#2c3e52',
-    textSecondary: '#4a5f75',
-    headerBg: 'rgba(244, 247, 251, 0.96)',
-    tagBg: '#e4f0fb',
-    tagColor: '#005eb8',
+  azure: {
+    bg: '#050d1c',
+    surface: '#091628',
+    surfaceAlt: '#0c1e34',
+    border: '#102038',
+    text: '#deeaf8',
+    textMuted: '#526880',
+    textSubtle: '#2e4460',
+    textBody: '#7a9ab8',
+    textSecondary: '#5e7e98',
+    headerBg: 'rgba(5, 13, 28, 0.96)',
+    tagBg: '#0a1e38',
+    tagColor: '#54a8e0',
     cardHoverBg: '#0071ce',
     cardHoverText: '#ffffff',
-    cardHoverMuted: '#ffffffbb',
-    cardHoverTag: '#005eb822',
-    cardHoverTagText: '#ffffff',
-    footerBg: '#ffffff',
-    dashed: '#dce5f0',
-    expHover: '#eef4fb',
-    toggleBg: '#071628',
-    toggleColor: '#f4f7fb',
+    cardHoverMuted: 'rgba(255, 255, 255, 0.65)',
+    cardHoverTag: '#0a2040',
+    cardHoverTagText: '#4aaee8',
+    footerBg: '#091628',
+    dashed: '#102038',
+    expHover: '#0b1c30',
+    toggleBg: '#deeaf8',
+    toggleColor: '#050d1c',
   },
 };

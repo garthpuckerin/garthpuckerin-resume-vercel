@@ -25,7 +25,7 @@ const FOOTER_LINKS = [
 ];
 
 export default function Homepage() {
-  const [theme, setTheme] = useState<'light' | 'dark' | 'corporate'>('light');
+  const [theme, setTheme] = useState<'light' | 'dark' | 'azure'>('light');
   const [accentId, setAccentId] = useState('blue');
   const [activeSection, setActiveSection] = useState('overview');
   const [activeModal, setActiveModal] = useState<Project | null>(null);
@@ -41,7 +41,7 @@ export default function Homepage() {
   }, []);
 
   const toggleTheme = () => {
-    const modes: ('light' | 'dark' | 'corporate')[] = ['light', 'dark', 'corporate'];
+    const modes: ('light' | 'dark' | 'azure')[] = ['light', 'dark', 'azure'];
     const next = modes[(modes.indexOf(theme) + 1) % modes.length];
     setTheme(next);
     localStorage.setItem('gp-theme', next);
@@ -209,7 +209,7 @@ export default function Homepage() {
               gap: 6,
             }}
           >
-            {theme === 'light' ? '● LIGHT' : theme === 'dark' ? '○ DARK' : '■ CORPORATE'}
+            {theme === 'light' ? '■ LIGHT' : theme === 'dark' ? '■ DARK' : '■ AZURE'}
           </button>
           <button
             onClick={() => setShowInsights(!showInsights)}
