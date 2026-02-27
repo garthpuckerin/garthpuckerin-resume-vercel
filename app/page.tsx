@@ -198,7 +198,7 @@ export default function Homepage() {
               background: t.toggleBg,
               color: t.toggleColor,
               border: 'none',
-              padding: '6px 14px',
+              padding: '6px 0',
               borderRadius: '20px',
               cursor: 'pointer',
               letterSpacing: '0.05em',
@@ -206,7 +206,8 @@ export default function Homepage() {
               transition: 'all 0.2s ease',
               display: 'flex',
               alignItems: 'center',
-              gap: 6,
+              justifyContent: 'center',
+              width: 92,
             }}
           >
             {theme === 'light' ? '■ LIGHT' : theme === 'dark' ? '■ DARK' : '■ AZURE'}
