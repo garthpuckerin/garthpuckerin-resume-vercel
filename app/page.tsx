@@ -671,7 +671,7 @@ export default function Homepage() {
       )}
 
       <Chatbot theme={theme} accent={accent} />
-      <ResumeGenerator theme={theme} accent={accent} />
+      <ResumeGenerator accent={accent} />
     </div>
   );
 }

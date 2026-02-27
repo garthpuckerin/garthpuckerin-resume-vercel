@@ -1,17 +1,14 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { THEMES } from '@/lib/themes';
 import { PROJECTS, EXPERIENCE, SKILLS } from '@/lib/data';
 
 interface ResumeGeneratorProps {
-  theme: 'light' | 'dark' | 'azure';
   accent: string;
 }
 
-export function ResumeGenerator({ theme, accent }: ResumeGeneratorProps) {
+export function ResumeGenerator({ accent }: ResumeGeneratorProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const t = THEMES[theme];
 
   useEffect(() => {
     const handleOpen = () => setIsOpen(true);
