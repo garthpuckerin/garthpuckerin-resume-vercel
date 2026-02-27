@@ -5,7 +5,7 @@ import { THEMES } from '@/lib/themes';
 import { SKILLS } from '@/lib/data';
 
 interface SkillsGraphProps {
-  theme: 'light' | 'dark' | 'corporate';
+  theme: 'light' | 'dark' | 'azure';
   accent: string;
 }
 

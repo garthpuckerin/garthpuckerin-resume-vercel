@@ -3,7 +3,7 @@
 import { THEMES } from '@/lib/themes';
 
 interface GitHubHeatmapProps {
-  theme: 'light' | 'dark' | 'corporate';
+  theme: 'light' | 'dark' | 'azure';
   accent: string;
 }
 
