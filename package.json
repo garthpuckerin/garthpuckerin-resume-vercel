@@ -4,7 +4,7 @@
   "private": true,
   "description": "Professional resume and portfolio site for Garth Puckerin",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3300",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
