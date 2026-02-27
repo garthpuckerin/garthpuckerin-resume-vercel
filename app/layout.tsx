@@ -17,9 +17,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Garth Puckerin | Business Systems Analyst · Learning Systems Architect',
     description: 'Enterprise systems integration, LMS architecture, and full-stack development.',
-  }, // Added missing closing brace and comma for openGraph
-  icons: {
-    icon: '/favicon.png',
   },
   icons: {
     icon: '/favicon.png',
