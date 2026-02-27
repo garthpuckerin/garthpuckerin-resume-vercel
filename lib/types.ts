@@ -58,6 +58,7 @@ export interface Experience {
   company: string;
   period: string;
   bullets: string[];
+  metrics?: string[];
 }
 
 export interface SkillGroup {

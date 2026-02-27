@@ -6,6 +6,8 @@ import { ProjectModal } from '@/components/ProjectModal';
 import { GetInTouch } from '@/components/GetInTouch';
 import { Chatbot } from '@/components/Chatbot';
 import { ResumeGenerator } from '@/components/ResumeGenerator';
+import { SkillsGraph } from '@/components/SkillsGraph';
+import { GitHubHeatmap } from '@/components/GitHubHeatmap';
 import { ACCENTS, PROJECTS, EXPERIENCE, SKILLS } from '@/lib/data';
 import type { Project } from '@/lib/types';
 import { THEMES } from '@/lib/themes';
@@ -27,6 +29,7 @@ export default function Homepage() {
   const [accentId, setAccentId] = useState('blue');
   const [activeSection, setActiveSection] = useState('overview');
   const [activeModal, setActiveModal] = useState<Project | null>(null);
+  const [showInsights, setShowInsights] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -209,6 +212,24 @@ export default function Homepage() {
           >
             {theme === 'light' ? '■ LIGHT' : theme === 'dark' ? '■ DARK' : '■ AZURE'}
           </button>
+          <button
+            onClick={() => setShowInsights(!showInsights)}
+            style={{
+              fontFamily: "'Syne', sans-serif",
+              fontSize: 10,
+              fontWeight: 800,
+              color: showInsights ? '#fff' : accent,
+              background: showInsights ? accent : 'transparent',
+              border: `1.5px solid ${accent}`,
+              padding: '6px 14px',
+              borderRadius: '20px',
+              cursor: 'pointer',
+              letterSpacing: '0.05em',
+              transition: 'all 0.2s ease',
+            }}
+          >
+            {showInsights ? 'INSIGHTS: ON' : 'INSIGHTS: OFF'}
+          </button>
           <a
             href="mailto:garth.puckerin@me.com"
             className="cta-btn"
@@ -382,6 +403,7 @@ export default function Homepage() {
                 theme={theme}
                 accent={accent}
                 onOpen={setActiveModal}
+                showInsights={showInsights}
               />
             ))}
           </div>
@@ -500,6 +522,36 @@ export default function Homepage() {
                       </li>
                     ))}
                   </ul>
+                  {showInsights && job.metrics && (
+                    <div
+                      style={{
+                        marginTop: 14,
+                        padding: '12px 14px',
+                        background: t.tagBg,
+                        borderLeft: `3px solid ${accent}`,
+                        fontFamily: "'Syne Mono', monospace",
+                        fontSize: 11,
+                        color: accent,
+                        borderRadius: '0 2px 2px 0',
+                      }}
+                    >
+                      <div
+                        style={{
+                          fontWeight: 800,
+                          marginBottom: 6,
+                          fontSize: 9,
+                          letterSpacing: '0.05em',
+                        }}
+                      >
+                        BUSINESS IMPACT
+                      </div>
+                      {job.metrics.map((m, k) => (
+                        <div key={k} style={{ marginBottom: 2 }}>
+                          → {m}
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
@@ -612,6 +664,10 @@ export default function Homepage() {
             ))}
           </div>
         </section>
+
+        <SkillsGraph theme={theme} accent={accent} />
+
+        <GitHubHeatmap theme={theme} accent={accent} />
 
         <GetInTouch theme={theme} accent={accent} />
       </main>

@@ -10,12 +10,20 @@ interface ProjectCardProps {
   theme: 'light' | 'dark' | 'azure';
   accent: string;
   onOpen: (project: Project) => void;
+  showInsights?: boolean;
 }
 
 /**
  * Project card component with hover effects and modal trigger
  */
-export function ProjectCard({ project, index, theme, accent, onOpen }: ProjectCardProps) {
+export function ProjectCard({
+  project,
+  index,
+  theme,
+  accent,
+  onOpen,
+  showInsights,
+}: ProjectCardProps) {
   const [hovered, setHovered] = useState(false);
   const t = THEMES[theme];
 
@@ -148,6 +156,35 @@ export function ProjectCard({ project, index, theme, accent, onOpen }: ProjectCa
           Learn more →
         </span>
       </div>
+
+      {showInsights && (
+        <div
+          style={{
+            marginTop: 16,
+            padding: '12px',
+            background: hovered ? 'rgba(255,255,255,0.1)' : t.tagBg,
+            borderLeft: `3px solid ${accent}`,
+            fontSize: 12,
+            lineHeight: 1.5,
+            color: hovered ? '#fff' : t.textBody,
+            fontFamily: "'Epilogue', sans-serif",
+          }}
+        >
+          <div
+            style={{
+              fontWeight: 800,
+              fontSize: 9,
+              marginBottom: 4,
+              color: hovered ? '#fff' : accent,
+              fontFamily: "'Syne', sans-serif",
+              letterSpacing: '0.05em',
+            }}
+          >
+            ENTERPRISE VALUE
+          </div>
+          {project.modal.enterpriseValue}
+        </div>
+      )}
     </div>
   );
 }

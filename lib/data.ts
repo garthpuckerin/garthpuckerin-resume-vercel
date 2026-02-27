@@ -137,6 +137,10 @@ export const EXPERIENCE: Experience[] = [
       'Maintained Docebo platform continuity during team transition',
       'Scoped integration consolidation across UKG, Axonify, LinkedIn Learning, and Docebo',
     ],
+    metrics: [
+      '100% platform uptime during transition',
+      'Zero data loss during HRIS sync migration',
+    ],
   },
   {
     role: 'Learning Management & Integration Consultant',
@@ -146,6 +150,10 @@ export const EXPERIENCE: Experience[] = [
       'Directed integration between Docebo, Udemy, Outlook, Teams, SSO, and SharePoint',
       'Authored UAT scripts and executed content validation across sandbox and production',
       'Configured authentication and permissions for pilot cohorts with HRIS and IT',
+    ],
+    metrics: [
+      '3,000+ users migrated across SSO domains',
+      '50% reduction in manual enrolment tickets',
     ],
   },
   {
@@ -157,6 +165,10 @@ export const EXPERIENCE: Experience[] = [
       'Integrated Workday, Salesforce, QuickSight, and LinkedIn Learning to automate data flows',
       'Led Tier I/II incident triage with vendors and security teams',
       'Built performance dashboards, test plans, and compliance-ready audit documentation',
+    ],
+    metrics: [
+      '$200k+ annual savings via integration automation',
+      '99.9% compliance record accuracy',
     ],
   },
   {
