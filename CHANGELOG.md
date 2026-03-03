@@ -12,6 +12,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Completely redesigned `ResumeGenerator.tsx` to use a superior, ATS-friendly, single-column executive layout based on the `anthropic` project's `print.js` template.
 - Replaced 2-column "Canva-style" resume format with structured HTML and injected printing CSS.
 
+### Fixed
+
+- **Resume Print Layout:** Resolved a bug where generating a PDF or printing the resume would spawn 5 blank extra pages due to Next.js layout `height: 100vh` rules bleeding into the print document flow.
+- **Resume Data Sync:** Stopped hardcoding specific sections (e.g., Core Competencies) to ensure the resume properly pulls the latest interactive `SKILLS` mapping and homepage content directly from `lib/data.ts`.
+
 ## [1.1.0] - 2026-02-27
 
 ### Added

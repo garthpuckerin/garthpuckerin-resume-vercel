@@ -24,6 +24,7 @@ export function ResumeGenerator({ accent }: ResumeGeneratorProps) {
 
   return (
     <div
+      className="resume-overlay"
       style={{
         position: 'fixed',
         inset: 0,
@@ -80,45 +81,46 @@ export function ResumeGenerator({ accent }: ResumeGeneratorProps) {
       <div id="ats-resume" className="resume-body">
         <header>
           <h1>Garth Puckerin</h1>
-          <div className="subtitle">AI-Native Enablement & Learning Systems Architect</div>
-          <div className="contact">
-            garth.puckerin@me.com · (718) 310-8707 · linkedin.com/in/garthpuckerin ·
-            github.com/garthpuckerin
+          <div className="subtitle">
+            BUSINESS SYSTEMS ANALYST · LEARNING SYSTEMS ARCHITECT · FULL-STACK
           </div>
-          <p className="summary">
-            I design the systems that govern learning content — not just the content itself. With
-            10+ years operating enterprise learning platforms and a deep technical background in
-            APIs and integrations, I build AI-native enablement architectures where training
-            materials are modular, adaptive, and maintainable at scale.
-          </p>
+          <div className="contact">
+            garth.puckerin@me.com · linkedin.com/in/garthpuckerin · github.com/garthpuckerin
+          </div>
+          <div className="summary">
+            <p>
+              I make enterprise systems work together — the integrations, the configuration, the
+              documentation that keeps things running when organizations scale faster than their
+              tools were designed for.
+            </p>
+            <p>
+              Along the way I learned to code — not to become an engineer, but because I got tired
+              of waiting for someone else to build the automation I needed. Now I build my own
+              tooling when the situation calls for it.
+            </p>
+            <p>
+              Recently I&apos;ve been working on a harder problem: how do you keep training content
+              accurate when the product changes weekly? The answer isn&apos;t more writers —
+              it&apos;s architecture. Canonical sources, modular components, AI that adapts content
+              while humans review.
+            </p>
+          </div>
         </header>
 
         <section>
-          <h2>Core Competencies</h2>
+          <h2>Capabilities & Skills</h2>
           <div className="skills-grid">
-            <div className="skill-category">
-              <strong>Systems Architecture</strong>
-              Modular content architectures, knowledge graphs, canonical sources of truth,
-              template-driven content pipelines
-            </div>
-            <div className="skill-category">
-              <strong>Enterprise LMS</strong>
-              Docebo, Workday Learning, SuccessFactors, SumTotal, SCORM/xAPI, compliance training
-            </div>
-            <div className="skill-category">
-              <strong>Integration & APIs</strong>
-              REST APIs, SSO/OAuth, Workday, Salesforce, LinkedIn Learning, QuickSight, event-driven
-              architecture
-            </div>
-            <div className="skill-category">
-              <strong>Technical Stack</strong>
-              Python, FastAPI, Neo4j, PostgreSQL, Docker, NATS, Temporal, Claude/OpenAI APIs
-            </div>
+            {SKILLS.map((s, i) => (
+              <div className="skill-category" key={i}>
+                <strong>{s.group}</strong>
+                {s.items.join(', ')}
+              </div>
+            ))}
           </div>
         </section>
 
         <section>
-          <h2>Representative Projects</h2>
+          <h2>Selected Work</h2>
           {PROJECTS.map((p, i) => (
             <div className="project" key={i}>
               <div className="project-header-inline">
@@ -160,26 +162,10 @@ export function ResumeGenerator({ accent }: ResumeGeneratorProps) {
             <ul>
               <li>Full stack engineering boot camp graduate</li>
               <li>
-                Built production applications using React, FastAPI, Django, PostgreSQL, Docker
-              </li>
-              <li>Designed microservices architectures and REST API systems</li>
-              <li>
-                Active builder using AI-assisted development workflows — shipping complex systems
-                rapidly
+                Built production applications using React, FastAPI, Django, PostgreSQL, REST API
+                design, Agile delivery
               </li>
             </ul>
-          </div>
-        </section>
-
-        <section>
-          <h2>Technical Skills</h2>
-          <div className="skills-grid">
-            {SKILLS.map((s, i) => (
-              <div className="skill-category" key={i}>
-                <strong>{s.group}</strong>
-                {s.items.join(', ')}
-              </div>
-            ))}
           </div>
         </section>
       </div>
@@ -219,9 +205,11 @@ export function ResumeGenerator({ accent }: ResumeGeneratorProps) {
         }
 
         .resume-body .subtitle {
-          font-size: 11pt;
+          font-size: 10pt;
+          font-weight: 500;
           color: #555;
           margin-bottom: 6px;
+          letter-spacing: 0.05em;
         }
 
         .resume-body .contact {
@@ -230,8 +218,13 @@ export function ResumeGenerator({ accent }: ResumeGeneratorProps) {
         }
 
         .resume-body .summary {
-          font-size: 9.5pt;
           margin-top: 10px;
+        }
+
+        .resume-body .summary p {
+          font-size: 9.5pt;
+          margin-top: 6px;
+          line-height: 1.5;
         }
 
         .resume-body section {
@@ -264,6 +257,7 @@ export function ResumeGenerator({ accent }: ResumeGeneratorProps) {
         .resume-body .dates {
           font-size: 9pt;
           color: #666;
+          white-space: nowrap;
         }
         .resume-body .company {
           font-size: 9pt;
@@ -322,18 +316,45 @@ export function ResumeGenerator({ accent }: ResumeGeneratorProps) {
             margin: 0.5in;
             size: letter;
           }
-          .no-print {
+          
+          /* Hide all standard site elements completely so they take 0 space */
+          header, main, footer, nav, .chatbot-container, .theme-toggle {
             display: none !important;
           }
-          body {
+          
+          /* Normal flow for the overlay so it sets the actual page count */
+          .resume-overlay {
+            position: relative !important;
+            background: none !important;
+            backdrop-filter: none !important;
+            display: block !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            height: auto !important;
+            overflow: visible !important;
+            clear: both !important;
+          }
+          
+          .no-print {
+            display: none !important;
+            visibility: hidden !important;
+          }
+
+          body, html {
             background: #fff !important;
             margin: 0 !important;
+            padding: 0 !important;
+            height: auto !important;
+            overflow: visible !important;
           }
+
           .resume-body {
             box-shadow: none !important;
             padding: 0 !important;
             width: 100% !important;
             max-width: none !important;
+            margin: 0 !important;
+            border: none !important;
           }
         }
       `}</style>
