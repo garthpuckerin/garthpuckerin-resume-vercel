@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2026-03-02
+
+### Changed
+
+- Completely redesigned `ResumeGenerator.tsx` to use a superior, ATS-friendly, single-column executive layout based on the `anthropic` project's `print.js` template.
+- Replaced 2-column "Canva-style" resume format with structured HTML and injected printing CSS.
+
 ## [1.1.0] - 2026-02-27
 
 ### Added
